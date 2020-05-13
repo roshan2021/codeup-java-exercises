@@ -20,6 +20,7 @@ public class MethodsExercises {
 
         System.out.println("getInteger test");
         getInteger(1, 10);
+
         System.out.println( 2 == sum(1,1) );
         System.out.println( 0 == sum(-1,1) );
         System.out.println( 0 != sum(-2,-5) );
@@ -65,17 +66,17 @@ public class MethodsExercises {
     }
 
     public static int getInteger(int min, int max) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
-        int userInput = Integer.parseInt(scan.nextLine());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter a number between 1 and 10");
+        int userInput = Integer.parseInt(scanner.nextLine());
 
-        // how to proceed
-        if( userInput < min || userInput > max ){
-            System.out.println("Number is outside of the range");
+        //how to proceed
+        if (userInput < min || userInput > max) {
+            System.out.println("number is outside of the range");
             return getInteger(min, max);
         } else {
-            // how to stop
-            System.out.println("Number is within the range");
+            //how to stop
+            System.out.println("number is within the range");
             return userInput;
         }
     }

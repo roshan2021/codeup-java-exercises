@@ -15,6 +15,9 @@ public class HelloWorld {
 //        float myString = 3.14159;
 //        System.out.println(myString);
 
+//        float myNumber = 3.14f;
+//        System.out.println(myNumber);
+
         double myNumber = 3.14;
         System.out.println(myNumber);
 
