@@ -1,43 +1,42 @@
 
-public class ServerNameGenerator {
+import java.util.Random;
 
-
-    public static String [] adjectives = {
-            "Clam",
-            "Happy",
-            "Cool",
-            "Beautiful",
-            "Square",
-            "Perfect",
-            "Machine",
-            "Red",
-            "Super",
-            "Same"
+public class ServerNameGenerator{
+    public static String[] adjectives = {
+            "fantastic",
+            "pretty",
+            "amazing",
+            "great",
+            "magnificent",
+            "sweet",
+            "clean",
+            "dirty",
+            "sharp",
+            "dull"
     };
 
-    public static String [] nouns = {
-            "Dog",
-            "Cat",
-            "Beaver",
-            "Man",
-            "Woman",
-            "truck",
-            "Table",
-            "Chair",
-            "Tree",
-            "Birds"
+    public static String[] nouns = {
+            "cat",
+            "dog",
+            "camel",
+            "horse",
+            "tree",
+            "chair",
+            "table",
+            "glass",
+            "pot",
+            "medicine"
     };
 
-
-    public static String randomNounAdjective(String[] arr) {
-        int random = (int) (Math.random() * (arr.length-1) + 1);
-        System.out.println(random);
-        return arr[random];
+    public static String getWord(String[] options){
+        Random randomOptions = new Random();
+        int randomWord = randomOptions.nextInt(options.length);
+        return options[randomWord];
     }
 
 
-    public static void main (String[] args){
-        System.out.println(randomNounAdjective(nouns));
-        System.out.println(randomNounAdjective(adjectives));
+    public static void main(String[] args) {
+        System.out.println("Here is your server name: ");
+        System.out.println(getWord(adjectives) + "-" + (getWord(nouns)));
     }
 }
