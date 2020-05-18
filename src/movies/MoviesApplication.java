@@ -84,3 +84,37 @@ public class MoviesApplication {
         return response;
     }
 }
+
+
+
+
+
+
+
+//package movies;
+//
+//import util.Input;
+//
+//public class MoviesApplication{
+//    public static void main(String[] args){
+//
+//
+//    System.out.println("Choices : " + choices);
+//
+//        boolean running = true;
+//        while(running){
+//            System.out.println("Enter your choice ");
+//            Input input = new Input();
+//            int response = input.getInt(0,5);
+//            if(response == 0){
+//                running = false;
+//            }
+//        }
+//    }
+//
+//    private static String returnMenuDisplay(){
+//
+//    }
+//
+//}
+//

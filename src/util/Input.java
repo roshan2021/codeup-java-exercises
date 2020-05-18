@@ -1,15 +1,73 @@
+//package util;
+//
+//import java.util.Scanner;
+//
+//public class Input {
+//
+//    private Scanner scanner = new Scanner(System.in);
+//
+////    public Input(){}
+//
+//    public String getString(){
+//        System.out.println("Type something: ");
+//        return scanner.nextLine();
+//    }
+//
+//    public boolean yesNo(){
+//        System.out.println("Select y/n");
+//        String answer = scanner.nextLine();
+//        return answer.equals("y") ? true : false;
+//    }
+//
+//    public int getInt(int min, int max){
+//        System.out.println("Give me a number between " + min + " and "  + max);
+//        int aNumber = Integer.parseInt(scanner.nextLine());
+//        if(aNumber < min || aNumber > max){
+//            System.out.println("Outside of the range, try again");
+//            return getInt(min, max);
+//        }
+//        return aNumber;
+//    }
+//
+//    public int getInt(){
+//        System.out.println("Give me an integer:");
+//        return Integer.parseInt(scanner.nextLine());
+//    }
+//
+//    public double getDouble(double min, double max){
+//        System.out.println("Give me a decimal between " + min + " and "  + max);
+//        double aDecimal = Double.parseDouble(scanner.nextLine());
+//        if(aDecimal < min || aDecimal > max){
+//            System.out.println("Outside of the range, try again");
+//            return getDouble(min, max);
+//        }
+//        return aDecimal;
+//    }
+//
+//    public double getDouble(){
+//        System.out.println("Give me a decimal:");
+//        return Double.parseDouble(scanner.nextLine());
+//    }
+//
+//}
+
+
 package util;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.util.Scanner;
 
 public class Input {
-
     private Scanner scanner = new Scanner(System.in);
 
 //    public Input(){}
 
     public String getString(){
-        System.out.println("Type something: ");
+        return this.getString("Type something: ");
+    }
+
+    public String getString(String prompt) {
+        System.out.println(prompt);
         return scanner.nextLine();
     }
 
@@ -20,8 +78,13 @@ public class Input {
     }
 
     public int getInt(int min, int max){
-        System.out.println("Give me a number between " + min + " and "  + max);
-        int aNumber = Integer.parseInt(scanner.nextLine());
+        int aNumber;
+        try {
+            aNumber = Integer.valueOf(this.getString("Give me a number between " + min + " and "  + max));
+        } catch (NumberFormatException e) {
+            return getInt(min, max);
+        }
+
         if(aNumber < min || aNumber > max){
             System.out.println("Outside of the range, try again");
             return getInt(min, max);
@@ -30,13 +93,21 @@ public class Input {
     }
 
     public int getInt(){
-        System.out.println("Give me an integer:");
-        return Integer.parseInt(scanner.nextLine());
+        try {
+            return Integer.valueOf(this.getString("Give me an integer:"));
+        } catch (NumberFormatException e) {
+            return getInt();
+        }
     }
 
     public double getDouble(double min, double max){
-        System.out.println("Give me a decimal between " + min + " and "  + max);
-        double aDecimal = Double.parseDouble(scanner.nextLine());
+        double aDecimal;
+        try {
+            aDecimal = Double.valueOf(this.getString("Give me a decimal between " + min + " and "  + max));
+        } catch (NumberFormatException e) {
+            return getDouble(min, max);
+        }
+
         if(aDecimal < min || aDecimal > max){
             System.out.println("Outside of the range, try again");
             return getDouble(min, max);
@@ -45,8 +116,11 @@ public class Input {
     }
 
     public double getDouble(){
-        System.out.println("Give me a decimal:");
-        return Double.parseDouble(scanner.nextLine());
+        try {
+            return Double.valueOf(this.getString("Give me a decimal:"));
+        } catch (NumberFormatException e) {
+            return getDouble();
+        }
     }
 
 }
