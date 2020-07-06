@@ -3,37 +3,20 @@ package HackerRank;
 import java.util.Scanner;
 
 public class StringFormat {
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         System.out.println("================================");
-        for (int i = 0; i < 3; i++) {
-            String str = scanner.next();
-            int num = scanner.nextInt();
-            System.out.printf("%-15s%03d\n", str, num);
+        for(int i=0;i<3;i++)
+        {
+            String s1=sc.next();
+            int x=sc.nextInt();
+            System.out.printf( "%-15s%03d %n", s1, x);
         }
         System.out.println("================================");
+
     }
 }
-
-//import java.util.Scanner;
-//
-//public class Solution {
-//
-//    public static void main(String[] args) {
-//        Scanner sc=new Scanner(System.in);
-//        System.out.println("================================");
-//        for(int i=0;i<3;i++)
-//        {
-//            String s1=sc.next();
-//            int x=sc.nextInt();
-//            System.out.printf( "%-15s%03d %n", s1, x);
-//        }
-//        System.out.println("================================");
-//
-//    }
-//}
 
 
 
@@ -67,3 +50,23 @@ public class StringFormat {
 //        Explanation
 //
 //        Each String is left-justified with trailing whitespace through the first 15  characters. The leading digit of the integer is the 16th character, and each integer that was less than  digits now has leading zeroes.
+
+
+
+
+//import java.util.Scanner;
+//  NOT CORRECT EXACTLY TO THE VARIABLES
+//public class StringFormat {
+//    public static void main(String[] args) {
+//        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+//        Scanner scanner = new Scanner(System.in);
+//
+//        System.out.println("================================");
+//        for (int i = 0; i < 3; i++) {
+//            String str = scanner.next();
+//            int num = scanner.nextInt();
+//            System.out.printf("%-15s%03d\n", str, num);
+//        }
+//        System.out.println("================================");
+//    }
+//}
