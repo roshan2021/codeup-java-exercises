@@ -24,3 +24,41 @@ public class Loops2 {
         System.out.println();
     }
 }
+
+class Loopstwo{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int test = in.nextInt();
+        for(int i = 0; i < test; i++ ){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            int sum = a;
+                for(int j = 0; j < n; j++){
+                    sum += (Math.pow(2,j)*b);
+                    System.out.println("");
+                }
+            System.out.println();
+        }
+    }
+}
+
+
+class LoopsII{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int t=in.nextInt();
+        for(int i=0;i<t;i++){
+            int a = in.nextInt();
+            int b = in.nextInt();
+            int n = in.nextInt();
+            int temp = a;
+            for (int j = 0; j < n; j++) {
+                temp += (Math.pow(2, j) * b);
+                System.out.print(temp + " ");
+            }
+            System.out.println();
+        }
+        in.close();
+    }
+}
