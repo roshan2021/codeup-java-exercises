@@ -16,6 +16,7 @@ public class IntegerToString {
             //Write your code here
             String s = Integer.toString(n);
             //negative numbers work
+            //if you have an array of values you can use String.valueOf(n);
             if (n == Integer.parseInt(s)) {
                 System.out.println("Good job");
             } else {
